@@ -1,0 +1,34 @@
+■(SELECT)PDO::query メソッドで直接クエリを実行する
+ユーザー入力を伴わないクエリに関しては単に PDO::query メソッドを実行すればいいだけです．返り値は PDOStatement となります．
+全員を取得する 
+$stmt = $pdo->query('SELECT * FROM users');
+
+
+■(INSERT,UPDATE,DALETE)PDO::exec メソッドで直接クエリを実行する
+ユーザー入力を伴わないクエリで， INSERT や UPDATE 等で作用した件数を直接返り値に欲しい場合は PDO::exec メソッドを代わりに使います．特に結果を必要としない場合においてもこちらを使用すべきです．後に登場する PDOStatement::execute と紛らわしいので注意してください．
+全員の年齢を+1し，その対象となった人数を返り値として取得する 
+$count = $pdo->exec('UPDATE users SET age = age + 1');
+
+
+■パラメータを使うSQLの場合
+PDO::prepare → PDOStatement::bindValue → PDOStatement::execute の3ステップでクエリを実行する
+ユーザー入力を受け取ってSQL文を動的に生成する場合は プリペアドステートメント と プレースホルダ を使わなければなりません．
+プレースホルダ:
+直訳すると「場所取り」．何かユーザ入力を当てはめる場所としてあらかじめ確保しておくもの．
+プリペアドステートメント:
+直訳すると「予約文」．文を予約したもの．通常，「予約文」は「場所取り」を使うために作られる．もし「場所取り」が無ければ普通に PDO::query などで実行するだけで十分なためである．
+プレースホルダには2種類あり，疑問符プレースホルダ を使う方法と， 名前付きプレースホルダ を使う方法があります．もしこれらが混ざってしまうと
+SQLSTATE[HY093]: Invalid parameter number: mixed named and positional parameters
+
+■トランザクション処理
+実行途中に失敗した場合、処理前の状態に戻す（ロールバック）する事で、何もしていないかの様な状態に戻せる。
+具体的には
+ $pdo->beginTransaction();//トランザクション開始
+try{
+    // コミット
+    $pdo->commit();//実行
+}catch(exeption e){
+    // ロールバック
+    $pdo->rollBack();//エラーの場合は元に戻す
+}
+https://qiita.com/mpyw/items/b00b72c5c95aac573b71#トランザクション処理
