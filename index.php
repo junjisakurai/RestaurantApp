@@ -16,6 +16,10 @@ require_once('data.php');
  	if(!check) alert("注文個数が入力されていません");
  	return check;
  }
+  // トップへ戻るボタン
+  $('#top-btn').click(function(){
+    $('html,body').animate({'scrollTop': 0}, 'slow');
+  });
 </script>
 
 <!DOCTYPE html>
@@ -69,6 +73,7 @@ require_once('data.php');
         <?php endforeach ?>
       </div>
       <input type="submit" value="注文する">
+      <div id="top-btn" class="header-logo">TOPに戻る</div>
     </form>
   </div>
 </body>
