@@ -2,7 +2,13 @@
 <?php 
 require_once('data.php');
 ?>
-
+<script>
+src="//code.jquery.com/jquery-3.1.1.min.js"
+  // トップへ戻るボタン
+  $('#top-btn').click(function(){
+    $('html,body').animate({'scrollTop': 0}, 'slow');
+  });
+</script>
 <script type="text/javascript">
 <!-- 注文ボタン押下時のチェック  -->
  function check(){
@@ -16,10 +22,6 @@ require_once('data.php');
  	if(!check) alert("注文個数が入力されていません");
  	return check;
  }
-  // トップへ戻るボタン
-  $('#top-btn').click(function(){
-    $('html,body').animate({'scrollTop': 0}, 'slow');
-  });
 </script>
 
 <!DOCTYPE html>
