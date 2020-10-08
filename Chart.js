@@ -1,4 +1,3 @@
-src="//code.jquery.com/jquery-3.1.1.min.js"
 //チャートデータ作成
 function getDrawChartData(barData) {
     var data = {
@@ -61,7 +60,6 @@ function main(){
             options: getChartOptions(data.average, data.totalCount)
         });
     });
-
 }
 
 main();

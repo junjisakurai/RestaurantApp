@@ -13,7 +13,7 @@ $menuReviews = $menu->getReviews($reviews);
 <head>
   <meta charset="utf-8">
   <title>Progate</title>
-  <link rel="stylesheet" type="text/css" href="stylesheet1.css">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <link href='https://fonts.googleapis.com/css?family=Pacifico|Lato' rel='stylesheet' type='text/css'>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
@@ -28,7 +28,7 @@ $menuReviews = $menu->getReviews($reviews);
         <p class="menu-item-type"><?php echo $menu->getType() ?></p>
           <!-- アルコールクラスはアルコール表示  -->
           <?php if ($menu instanceof Alcohol ): ?>
-          	<p class="menu-item-alcohol">アルコール <?php echo $menu->getAlcohol() ?> %</p>
+          	<p class="menu-item-alcohol">/アルコール <?php echo $menu->getAlcohol() ?> %</p>
           <?php endif ?>
       <?php else: ?>
         <?php for ($i = 0; $i < $menu->getSpiciness(); $i++): ?>

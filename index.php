@@ -22,7 +22,7 @@ require_once('data.php');
   <meta charset="utf-8">
   <title>Café Progate</title>
   <!-- href="stylesheet.css"だと変更したスタイルシートの内容が反映されない  -->
-  <link rel="stylesheet" type="text/css" href="stylesheet1.css">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <link href='https://fonts.googleapis.com/css?family=Pacifico|Lato' rel='stylesheet' type='text/css'>
 </head>
 <body>
@@ -50,7 +50,7 @@ require_once('data.php');
               <p class="menu-item-type"><?php echo $menu->getType() ?></p>
               <!-- アルコールクラスはアルコール表示  -->
               <?php if ($menu instanceof Alcohol ): ?>
-              	<p class="menu-item-alcohol">アルコール <?php echo $menu->getAlcohol() ?> %</p>
+              	<p class="menu-item-alcohol">/アルコール <?php echo $menu->getAlcohol() ?> %</p>
               <?php endif ?>
             <?php else: ?>
               <!-- フードクラスは辛さ表示  -->
@@ -66,10 +66,13 @@ require_once('data.php');
           </div>
         <?php endforeach ?>
       </div>
-      <input type="submit" value="注文する">
-      <!-- <div id="top-btn" class="header-logo">TOPに戻る</div> -->
-      <input id="top-btn" type="button" value="TOPに戻る">
+  <!--固定ボタン-->
+  <a href="#top" class="topBtn" id="topBtn">TOP</a><!--/固定ボタン-->
+      <footer>
+      <input id="order" type="submit" value="注文する">
+      </footer>
     </form>
+
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="index.js"></script>
