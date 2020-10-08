@@ -2,28 +2,20 @@
 <?php 
 require_once('data.php');
 ?>
-<script>
-src="//code.jquery.com/jquery-3.1.1.min.js"
-  // トップへ戻るボタン
-  $('#top-btn').click(function(){
-    $('html,body').animate({'scrollTop': 0}, 'slow');
-  });
-</script>
 <script type="text/javascript">
 <!-- 注文ボタン押下時のチェック  -->
  function check(){
-    var check =  false;
- 	<?php foreach ($menus as $menu): ?>
- 	<!-- 注文総数0なら、確認画面に遷移しない  -->
- 	if( Number(<?php echo $menu->getName() ?>.value ) > 0){
- 	    check =  true;
- 	}
- 	<?php endforeach ?>
- 	if(!check) alert("注文個数が入力されていません");
- 	return check;
+   var check =  false;
+   <?php foreach ($menus as $menu): ?>
+   <!-- 注文総数0なら、確認画面に遷移しない  -->
+   if( Number(<?php echo $menu->getName() ?>.value ) > 0){
+       check =  true;
+   }
+   <?php endforeach ?>
+   if(!check) alert("注文個数が入力されていません");
+   return check;
  }
 </script>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -75,10 +67,11 @@ src="//code.jquery.com/jquery-3.1.1.min.js"
         <?php endforeach ?>
       </div>
       <input type="submit" value="注文する">
-      <div id="top-btn" class="header-logo">TOPに戻る</div>
+      <!-- <div id="top-btn" class="header-logo">TOPに戻る</div> -->
+      <input id="top-btn" type="button" value="TOPに戻る">
     </form>
   </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="index.js"></script>
 </body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
-  <script src="Chart.js"></script>
 </html>
