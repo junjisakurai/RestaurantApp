@@ -6,7 +6,7 @@
 ■ VIEW  (Heroku)<br>
 https://restaurant-app-junji.herokuapp.com/index.php
 
-![ポートフォリオ画面-01](https://user-images.githubusercontent.com/54252926/95788198-09376900-0d16-11eb-98ae-43e023a562ac.jpg)
+![ポートフォリオ画面-01](https://user-images.githubusercontent.com/54252926/95788478-95499080-0d16-11eb-868f-446ccab81960.jpg)
 
 ■ ファイル構成
 <pre>
