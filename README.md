@@ -3,8 +3,9 @@
 
 ■ VIEW  (Heroku)<br>
 https://restaurant-app-junji.herokuapp.com/index.php
-<pre>
+
 ■ ファイル構成
+<pre>
 ●画面クラス ------------------------------------
 トップ画面
 index.php
