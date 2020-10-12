@@ -1,9 +1,9 @@
 # RestaurantApp
 レストラン料理注文WEBアプリ
-<pre>
-■ VIEW  (Heroku)
-https://restaurant-app-junji.herokuapp.com/index.php
 
+■ VIEW  (Heroku)<br>
+https://restaurant-app-junji.herokuapp.com/index.php
+<pre>
 ■ ファイル構成
 ●画面クラス ------------------------------------
 トップ画面
