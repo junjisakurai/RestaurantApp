@@ -1,7 +1,6 @@
-<pre>
 # RestaurantApp
 レストラン料理注文WEBアプリ
-
+<pre>
 ■ VIEW  (Heroku)
 https://restaurant-app-junji.herokuapp.com/index.php
 
